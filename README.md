@@ -1,9 +1,42 @@
 # Sanity Clean Content Studio
 
-Congratulations, you have now installed the Sanity Content Studio, an open-source real-time content editing environment connected to the Sanity backend.
+1. setup clean a clean studio
+    ```
+    npm create sanity@latest -- --template clean --create-project "recovery-studio" --dataset production --typescript
+    ```
 
-Now you can do the following things:
+    > Note: Some dependencies flag a false-positive in `npm audit`; let's fix that.
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+2. Remove packages and lock file
+    ```
+    rm -rf node_modules
+    rm package-lock.json
+    ```
+
+3. Add override for prismjs in package.json
+    ```
+    // package.json
+    {
+        ... 
+        "overrides": {
+            "prismjs": "^1.30.0"
+        },
+    }
+    ```
+
+4. reinstall deps
+    ```
+    npm i react react-dom styled-components @sanity/vision sanity
+    ```
+    ```
+    npm i -D @sanity/eslint-config-studio @types/react eslint prettier typescript eslint-plugin-prettier prettier eslint-plugin-simple-import-sort eslint-plugin-import
+    ```
+
+5. create schema and drop it into `static/` 
+    ```
+    npx sanity schema deploy --manifest-dir static/
+    ```
+
+6. Deploy Studio to Vercel
+
+7. -> https://studio.puglord.dev/static/create-manifest.json
