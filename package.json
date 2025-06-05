@@ -1,0 +1,44 @@
+{
+  "name": "recovery-studio",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy",
+    "dev": "sanity dev",
+    "lint": "eslint . --fix",
+    "start": "sanity start"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/vision": "^3.91.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sanity": "^3.91.0",
+    "styled-components": "^6.1.18"
+  },
+  "overrides": {
+    "prismjs": "^1.30.0"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  },
+  "devDependencies": {
+    "@sanity/eslint-config-studio": "^5.0.2",
+    "@types/react": "^19.1.6",
+    "eslint": "^9.28.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.4.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  }
+}
